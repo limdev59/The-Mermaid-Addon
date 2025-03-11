@@ -1,0 +1,91 @@
+{
+	"format_version": "1.10.0",
+	"animations": {
+		"animation.trident.wield_first_person": {
+			"loop": true,
+			"bones": {
+				"pole": {
+					"position": [
+						-4,
+						-10,
+						-2
+					],
+					"rotation": [
+						155,
+						-15,
+						15
+					]
+				}
+			}
+		},
+		"animation.trident.wield_first_person_raise": {
+			"loop": true,
+			"bones": {
+				"pole": {
+					"position": [
+						"math.lerp(4,-7,variable.charge_amount)",
+						0,
+						"math.lerp(-2,-6,variable.charge_amount)"
+					],
+					"rotation": [
+						40,
+						-12,
+						-60
+					]
+				}
+			}
+		},
+		"animation.trident.wield_first_person_riptide": {
+			"loop": true,
+			"override_previous_animation": true,
+			"bones": {
+				"pole": {
+					"position": [
+						-2,
+						-7,
+						-10
+					],
+					"rotation": [
+						180,
+						60,
+						-36
+					]
+				}
+			}
+		},
+		"animation.trident.wield_third_person": {
+			"loop": true,
+			"bones": {
+				"pole": {
+					"position": [
+						0,
+						0,
+						-12
+					],
+					"rotation": [
+						90,
+						0,
+						0
+					]
+				}
+			}
+		},
+		"animation.trident.wield_third_person_raise": {
+			"loop": true,
+			"bones": {
+				"pole": {
+					"position": [
+						0,
+						0,
+						23
+					],
+					"rotation": [
+						0,
+						180,
+						0
+					]
+				}
+			}
+		}
+	}
+}

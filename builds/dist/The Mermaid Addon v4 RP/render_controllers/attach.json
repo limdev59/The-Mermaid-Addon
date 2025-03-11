@@ -1,0 +1,107 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.attach": {
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.fin"
+				}
+			],
+			"arrays": {
+				"textures": {
+					"Array.attach": [
+						"Texture.fin1",
+						"Texture.fin2",
+						"Texture.fin3",
+						"Texture.fin4",
+						"Texture.fin5",
+						"Texture.fin6",
+						"Texture.fin7",
+						"Texture.fin8",
+						"Texture.fin9",
+						"Texture.fin10",
+						"Texture.fin11"
+					]
+				}
+			},
+			"textures": [
+				"array.attach[q.property('lim:color')]"
+			],
+			"part_visibility": [
+				{
+					"magic_circle": "!(query.variant == 0)"
+				},
+				{
+					"magic_circle_1": "!(query.variant == 0)"
+				},
+				{
+					"magic_circle_1": "!(query.variant == 0)"
+				},
+				{
+					"magic_circle_2": "!(query.variant == 0)"
+				},
+				{
+					"magic_circle_3": "!(query.variant == 0)"
+				},
+				{
+					"magic_circle_1R": "!(query.variant == 0)"
+				},
+				{
+					"magic_circle_1L": "!(query.variant == 0)"
+				},
+				{
+					"magic_circle_1R2": "!(query.variant == 0)"
+				},
+				{
+					"magic_circle_1L2": "!(query.variant == 0)"
+				},
+				{
+					"magic_circle_1R3": "!(query.variant == 0)"
+				},
+				{
+					"magic_circle_1L3": "!(query.variant == 0)"
+				},
+				{
+					"bigf1": "!(query.variant == 0)"
+				},
+				{
+					"magic1": "!(query.variant == 0)"
+				},
+				{
+					"magic_1": "!(query.variant == 0)"
+				},
+				{
+					"magic_2": "!(query.variant == 0)"
+				},
+				{
+					"magic_3": "!(query.variant == 0)"
+				},
+				{
+					"magic_4": "!(query.variant == 0)"
+				},
+				{
+					"magic_5": "!(query.variant == 0)"
+				},
+				{
+					"magic_6": "!(query.variant == 0)"
+				},
+				{
+					"magic_7": "!(query.variant == 0)"
+				},
+				{
+					"magic_8": "!(query.variant == 0)"
+				},
+				{
+					"m_rot": "!(query.variant == 0)"
+				},
+				{
+					"fin1": "!(query.variant == 0)"
+				},
+				{
+					"flat": "!(query.variant == 0)"
+				}
+			]
+		}
+	}
+}

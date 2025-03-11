@@ -1,0 +1,142 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.magic_missile",
+				"texture_width": 32,
+				"texture_height": 32,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 1.5,
+				"visible_bounds_offset": [
+					0,
+					0.25,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [
+						0,
+						1,
+						0
+					]
+				},
+				{
+					"name": "body",
+					"parent": "root",
+					"pivot": [
+						0,
+						1,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								0,
+								-1.5,
+								-3
+							],
+							"size": [
+								0,
+								5,
+								16
+							],
+							"pivot": [
+								0,
+								0,
+								0
+							],
+							"rotation": [
+								0,
+								0,
+								45
+							],
+							"uv": {
+								"east": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										16,
+										5
+									]
+								}
+							}
+						},
+						{
+							"origin": [
+								0,
+								-1.5,
+								-3
+							],
+							"size": [
+								0,
+								5,
+								16
+							],
+							"pivot": [
+								0,
+								0,
+								0
+							],
+							"rotation": [
+								0,
+								0,
+								-45
+							],
+							"uv": {
+								"east": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										16,
+										5
+									]
+								}
+							}
+						},
+						{
+							"origin": [
+								-2.5,
+								-1.5,
+								12
+							],
+							"size": [
+								5,
+								5,
+								0
+							],
+							"pivot": [
+								0,
+								0,
+								0
+							],
+							"rotation": [
+								0,
+								0,
+								45
+							],
+							"uv": {
+								"south": {
+									"uv": [
+										0,
+										5
+									],
+									"uv_size": [
+										5,
+										5
+									]
+								}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,28 @@
+{
+	"format_version": "1.20.20",
+	"minecraft:item": {
+		"description": {
+			"identifier": "lim:eternity_fin",
+			"category": "Equipment"
+		},
+		"components": {
+			"minecraft:icon": {
+				"texture": "ete"
+			},
+			"minecraft:creative_category": {
+				"parent": "itemGroup.name.leggings"
+			},
+			"minecraft:max_stack_size": 1,
+			"minecraft:enchantable": {
+				"value": 10,
+				"slot": "armor_legs"
+			},
+			"minecraft:mining_speed": 5,
+			"minecraft:wearable": {
+				"slot": "slot.armor.legs",
+				"protection": 9
+			},
+			"minecraft:display_name": {}
+		}
+	}
+}

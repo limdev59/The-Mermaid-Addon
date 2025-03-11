@@ -1,0 +1,209 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.mermaid.sea_of_lament.default": {
+			"loop": true,
+			"bones": {
+				"ring": {
+					"scale": 1
+				},
+				"item": {
+					"rotation": [
+						90,
+						30,
+						90
+					],
+					"position": [
+						-6,
+						4,
+						13
+					],
+					"scale": 0.5
+				},
+				"handle": {
+					"scale": [
+						1,
+						2,
+						1
+					]
+				},
+				"ringneck": {
+					"position": [
+						0,
+						82,
+						0
+					]
+				},
+				"wing": {
+					"position": [
+						"-25+math.sin(q.life_time*90)*3",
+						100,
+						0
+					]
+				},
+				"wing2": {
+					"position": [
+						0,
+						"125-math.sin(q.life_time*90)*3",
+						0
+					]
+				},
+				"wing3": {
+					"position": [
+						"-18+math.sin(q.life_time*90)*3",
+						"118-math.sin(q.life_time*90)*3",
+						0
+					]
+				},
+				"wing4": {
+					"position": [
+						"-19+math.sin(q.life_time*90)*3",
+						"83+math.sin(q.life_time*90)*3",
+						0
+					]
+				},
+				"shell": {
+					"rotation": [
+						0,
+						"math.sin(q.life_time*90)*3.6*(q.property('lim:mana')+50)",
+						0
+					],
+					"position": [
+						0,
+						100,
+						0
+					],
+					"scale": 0.6
+				},
+				"test": {
+					"rotation": [
+						-90,
+						0,
+						-360
+					],
+					"position": [
+						-20.5,
+						120.1,
+						0.9
+					],
+					"scale": 0.313
+				}
+			}
+		},
+		"animation.mermaid.sea_of_lament.first_person": {
+			"loop": true,
+			"bones": {
+				"ring": {
+					"scale": 1
+				},
+				"item": {
+					"rotation": [
+						"157.1932",
+						"0.4443999999999999",
+						"-30.468599999999995"
+					],
+					"position": [
+						"-22",
+						"37",
+						"11"
+					],
+					"scale": 0.3
+				},
+				"handle": {
+					"scale": [
+						1,
+						2,
+						1
+					]
+				},
+				"ringneck": {
+					"position": [
+						0,
+						82,
+						0
+					]
+				},
+				"wing": {
+					"position": [
+						"-25+math.sin(q.life_time*90)*3",
+						100,
+						0
+					]
+				},
+				"wing2": {
+					"position": [
+						0,
+						"125-math.sin(q.life_time*90)*3",
+						0
+					]
+				},
+				"wing3": {
+					"position": [
+						"-18+math.sin(q.life_time*90)*3",
+						"118-math.sin(q.life_time*90)*3",
+						0
+					]
+				},
+				"wing4": {
+					"position": [
+						"-19+math.sin(q.life_time*90)*3",
+						"83+math.sin(q.life_time*90)*3",
+						0
+					]
+				},
+				"shell": {
+					"rotation": [
+						0,
+						"math.sin(q.life_time*90)*3.6*(q.property('lim:mana')+50)",
+						0
+					],
+					"position": [
+						0,
+						100,
+						0
+					],
+					"scale": 0.6
+				},
+				"test": {
+					"rotation": [
+						-90,
+						0,
+						0
+					],
+					"position": [
+						-20.5,
+						120.1,
+						1.3
+					],
+					"scale": 0.313
+				}
+			}
+		},
+		"animation.mermaid.sea_of_lament.particle": {
+			"loop": true,
+			"override_previous_animation": false,
+			"animation_length": 1,
+			"particle_effects": {
+				"0.0": {
+					"effect": "warp",
+					"locator": "locatorP"
+				},
+				"0.5": {
+					"effect": "warp",
+					"locator": "locatorP"
+				}
+			}
+		},
+		"animation.mermaid.sea_of_lament.particle_off": {
+			"loop": false,
+			"override_previous_animation": true,
+			"animation_length": 1,
+			"loop_delay": 1,
+			"bones": {
+				"locRot": {
+					"scale": 0
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,258 @@
+{
+	"format_version": "1.10.0",
+	"geometry.sh": {
+		"texturewidth": 32,
+		"textureheight": 32,
+		"visible_bounds_width": 5,
+		"visible_bounds_height": 3.5,
+		"visible_bounds_offset": [
+			0,
+			1.25,
+			0
+		],
+		"bones": [
+			{
+				"name": "root",
+				"pivot": [
+					0,
+					0,
+					0
+				]
+			},
+			{
+				"name": "waist",
+				"parent": "root",
+				"pivot": [
+					0,
+					12,
+					0
+				]
+			},
+			{
+				"name": "body",
+				"parent": "waist",
+				"pivot": [
+					0,
+					24,
+					0
+				]
+			},
+			{
+				"name": "rightArm",
+				"parent": "body",
+				"pivot": [
+					-5,
+					22,
+					0
+				],
+				"cubes": [
+					{
+						"origin": [
+							-8,
+							16,
+							-2
+						],
+						"size": [
+							4,
+							8,
+							4
+						],
+						"uv": [
+							0,
+							0
+						],
+						"inflate": 0.2
+					}
+				]
+			},
+			{
+				"name": "magic_sh",
+				"parent": "rightArm",
+				"pivot": [
+					-6,
+					15,
+					1
+				],
+				"cubes": [
+					{
+						"origin": [
+							-8,
+							13,
+							-2
+						],
+						"size": [
+							4,
+							2,
+							4
+						],
+						"uv": [
+							0,
+							12
+						],
+						"inflate": 0.3
+					}
+				]
+			},
+			{
+				"name": "magic_conduits",
+				"parent": "magic_sh",
+				"pivot": [
+					-6,
+					13.5,
+					0
+				]
+			},
+			{
+				"name": "wing1",
+				"parent": "magic_conduits",
+				"pivot": [
+					-6,
+					13.5,
+					0
+				]
+			},
+			{
+				"name": "wrot1",
+				"parent": "wing1",
+				"pivot": [
+					-6,
+					13.5,
+					0
+				],
+				"cubes": [
+					{
+						"origin": [
+							-6.5,
+							13,
+							-0.5
+						],
+						"size": [
+							1,
+							1,
+							1
+						],
+						"uv": [
+							0,
+							18
+						]
+					}
+				]
+			},
+			{
+				"name": "wing2",
+				"parent": "magic_conduits",
+				"pivot": [
+					-6,
+					13.5,
+					0
+				]
+			},
+			{
+				"name": "wrot2",
+				"parent": "wing2",
+				"pivot": [
+					-6,
+					13.5,
+					0
+				],
+				"cubes": [
+					{
+						"origin": [
+							-6.5,
+							13,
+							-0.5
+						],
+						"size": [
+							1,
+							1,
+							1
+						],
+						"uv": [
+							0,
+							18
+						]
+					}
+				]
+			},
+			{
+				"name": "center_scale",
+				"parent": "magic_conduits",
+				"pivot": [
+					-6,
+					13.5,
+					0
+				]
+			},
+			{
+				"name": "center",
+				"parent": "center_scale",
+				"pivot": [
+					-6,
+					13.5,
+					0
+				]
+			},
+			{
+				"name": "rot",
+				"parent": "center",
+				"pivot": [
+					-6,
+					13.5,
+					0
+				],
+				"cubes": [
+					{
+						"origin": [
+							-6.5,
+							13,
+							-0.5
+						],
+						"size": [
+							1,
+							1,
+							1
+						],
+						"uv": [
+							0,
+							18
+						]
+					}
+				]
+			},
+			{
+				"name": "rightSleeve",
+				"parent": "rightArm",
+				"pivot": [
+					-5,
+					22,
+					0
+				]
+			},
+			{
+				"name": "rightItem",
+				"parent": "rightArm",
+				"pivot": [
+					-6,
+					15,
+					1
+				],
+				"locators": {
+					"lead_hold": [
+						-6,
+						15,
+						1
+					]
+				}
+			},
+			{
+				"name": "leftArm",
+				"parent": "body",
+				"pivot": [
+					5,
+					22,
+					0
+				]
+			}
+		]
+	}
+}

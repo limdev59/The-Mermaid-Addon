@@ -1,0 +1,22 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.magic_missile.move": {
+			"loop": true,
+			"bones": {
+				"body": {
+					"rotation": [
+						"variable.shake_power-query.target_x_rotation",
+						"-query.target_y_rotation",
+						"(math.random_integer(0,1)*2-1)*q.life_time*30"
+					],
+					"scale": [
+						0.7,
+						0.7,
+						0.9
+					]
+				}
+			}
+		}
+	}
+}

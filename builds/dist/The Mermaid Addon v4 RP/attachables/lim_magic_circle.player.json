@@ -1,0 +1,43 @@
+//bridge-file-version: #4
+{
+	"format_version": "1.10.0",
+	"minecraft:attachable": {
+		"description": {
+			"identifier": "lim:magic_circle.player",
+			"item": {
+				"lim:magic_circle": "query.owner_identifier == 'minecraft:player'"
+			},
+			"materials": {
+				"fin": "glint_nocull"
+			},
+			"textures": {
+				"fin1": "textures/entity/new_mermaid_fin_default",
+				"fin2": "textures/entity/new_mermaid_fin_red",
+				"fin3": "textures/entity/new_mermaid_fin_orange",
+				"fin4": "textures/entity/new_mermaid_fin_yellow",
+				"fin5": "textures/entity/new_mermaid_fin_green",
+				"fin6": "textures/entity/new_mermaid_fin_light_blue",
+				"fin7": "textures/entity/new_mermaid_fin_blue",
+				"fin8": "textures/entity/new_mermaid_fin_purple",
+				"fin9": "textures/entity/new_mermaid_fin_pink",
+				"fin10": "textures/entity/new_mermaid_fin_white",
+				"fin11": "textures/entity/new_mermaid_fin_black"
+			},
+			"geometry": {
+				"default": "geometry.mermaid.chestplate"
+			},
+			"scripts": {
+				"parent_setup": "variable.chest_layer_visible = 0.0;",
+				"animate": [
+					"fin_default"
+				]
+			},
+			"animations": {
+				"fin_default": "animation.mermaid_fin.ani"
+			},
+			"render_controllers": [
+				"controller.render.attach"
+			]
+		}
+	}
+}
