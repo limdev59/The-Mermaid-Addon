@@ -1,0 +1,216 @@
+//bridge-file-version: #0
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.player.first_person": {
+			"geometry": "Geometry.default",
+			"materials": [
+				{
+					"*": "Material.default"
+				}
+			],
+			"textures": [
+				"Texture.default"
+			],
+			"on_fire_color": {
+				"r": 1,
+				"g": 1,
+				"b": 1,
+				"a": 0.65
+			},
+			"is_hurt_color": {
+				"r": "Math.sin(query.life_time*300)*0.25 + 0.4",
+				"g": "Math.sin(query.life_time*600)*0.25 +0.4",
+				"b": "Math.sin(query.life_time*900)*0.25 +0.4",
+				"a": 0.65
+			},
+			"part_visibility": [
+				{
+					"*": false
+				},
+				{
+					"rightArm": "query.get_equipped_item_name(0, 1) == '' || query.get_equipped_item_name(0, 1) == 'map'"
+				},
+				{
+					"rightSleeve": "query.get_equipped_item_name(0, 1) == '' || query.get_equipped_item_name(0, 1) == 'map'"
+				},
+				{
+					"leftArm": "(query.get_equipped_item_name(0, 1) == 'map' && query.get_equipped_item_name('off_hand') != 'shield') || (query.get_equipped_item_name('off_hand') == 'map' && !query.item_is_charged) || (!query.item_is_charged && (variable.item_use_normalized > 0 && variable.item_use_normalized < 1.0))"
+				},
+				{
+					"leftSleeve": "(query.get_equipped_item_name(0, 1) == 'map' && query.get_equipped_item_name('off_hand') != 'shield') || (query.get_equipped_item_name('off_hand') == 'map' && !query.item_is_charged) || (!query.item_is_charged && (variable.item_use_normalized > 0 && variable.item_use_normalized < 1.0))"
+				},
+				{
+					"leftBoot": "(q.variant == 0)"
+				},
+				{
+					"rightBoot": "(q.variant == 0)"
+				},
+				{
+					"leftLegging": "(q.variant == 0)"
+				},
+				{
+					"rightLegging": "(q.variant == 0)"
+				},
+				{
+					"rightLeg": "(q.variant == 0)"
+				},
+				{
+					"leftLeg": "(q.variant == 0)"
+				},
+				{
+					"rightPants": "(q.variant == 0)"
+				},
+				{
+					"leftPants": "(q.variant == 0)"
+				},
+				{
+					"leftSock": "(q.variant == 0)"
+				},
+				{
+					"rightSock": "(q.variant == 0)"
+				}
+			]
+		},
+		"controller.render.player.third_person": {
+			"geometry": "Geometry.default",
+			"materials": [
+				{
+					"*": "Material.default"
+				}
+			],
+			"textures": [
+				"Texture.default"
+			],
+			"on_fire_color": {
+				"r": 1,
+				"g": 1,
+				"b": 1,
+				"a": 0.65
+			},
+			"is_hurt_color": {
+				"r": "Math.sin(query.life_time*300)*0.25 + 0.4",
+				"g": "Math.sin(query.life_time*600)*0.25 +0.4",
+				"b": "Math.sin(query.life_time*900)*0.25 +0.4",
+				"a": 0.65
+			},
+			"part_visibility": [
+				{
+					"*": true
+				},
+				{
+					"helmet": "variable.helmet_layer_visible"
+				},
+				{
+					"bodyArmor": "variable.chest_layer_visible && !query.has_cape"
+				},
+				{
+					"leftArmArmor": "variable.chest_layer_visible && !query.has_cape"
+				},
+				{
+					"rightArmArmor": "variable.chest_layer_visible && !query.has_cape"
+				},
+				{
+					"belt": "variable.chest_layer_visible && variable.leg_layer_visible"
+				},
+				{
+					"leftBoot": "(q.variant == 0)"
+				},
+				{
+					"rightBoot": "(q.variant == 0)"
+				},
+				{
+					"leftLegging": "(q.variant == 0)"
+				},
+				{
+					"rightLegging": "(q.variant == 0)"
+				},
+				{
+					"rightLeg": "(q.variant == 0)"
+				},
+				{
+					"leftLeg": "(q.variant == 0)"
+				},
+				{
+					"rightPants": "(q.variant == 0)"
+				},
+				{
+					"leftPants": "(q.variant == 0)"
+				},
+				{
+					"leftSock": "(q.variant == 0)"
+				},
+				{
+					"rightSock": "(q.variant == 0)"
+				}
+			]
+		},
+		"controller.render.player.map": {
+			"geometry": "Geometry.default",
+			"materials": [
+				{
+					"*": "Material.default"
+				}
+			],
+			"textures": [
+				"Texture.default"
+			],
+			"on_fire_color": {
+				"r": 1,
+				"g": 1,
+				"b": 1,
+				"a": 0.65
+			},
+			"is_hurt_color": {
+				"r": "Math.sin(query.life_time*300)*0.25 + 0.4",
+				"g": "Math.sin(query.life_time*600)*0.25 +0.4",
+				"b": "Math.sin(query.life_time*900)*0.25 +0.4",
+				"a": 0.65
+			},
+			"part_visibility": [
+				{
+					"*": false
+				},
+				{
+					"head": true
+				},
+				{
+					"hat": true
+				},
+				{
+					"helmet": true
+				},
+				{
+					"leftBoot": "(q.variant == 0)"
+				},
+				{
+					"rightBoot": "(q.variant == 0)"
+				},
+				{
+					"leftLegging": "(q.variant == 0)"
+				},
+				{
+					"rightLegging": "(q.variant == 0)"
+				},
+				{
+					"rightLeg": "(q.variant == 0)"
+				},
+				{
+					"leftLeg": "(q.variant == 0)"
+				},
+				{
+					"rightPants": "(q.variant == 0)"
+				},
+				{
+					"leftPants": "(q.variant == 0)"
+				},
+				{
+					"leftSock": "(q.variant == 0)"
+				},
+				{
+					"rightSock": "(q.variant == 0)"
+				}
+			]
+		}
+	}
+}

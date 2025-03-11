@@ -1,0 +1,47 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:attachable": {
+        "description": {
+            "identifier": "lim:sea_of_lament",
+            "materials": {
+                "default": "glint_nocull",
+                "alpha": "entity_alphatest"
+            },
+            "textures": {
+                "default": "textures/items/staff_uv",
+                "ring": "textures/items/staff_ring"
+            },
+            "geometry": {
+                "default": "geometry.mermaid.sea_of_lament"
+            },
+            "animations": {
+                "hold_third_person": "animation.mermaid.sea_of_lament.default",
+                "hold_first_person": "animation.mermaid.sea_of_lament.first_person",
+                "particle": "animation.mermaid.sea_of_lament.particle",
+                "particle_off": "animation.mermaid.sea_of_lament.particle_off",
+                "using_item": "controller.animation.using_item"
+            },
+            "particle_effects": {
+                "warp": "lim:warp"
+            },
+            "scripts": {
+                "pre_animation": [
+                    "variable.charge_amount = math.clamp((query.main_hand_item_max_duration - (query.main_hand_item_use_duration - query.frame_alpha + 1.0)) / 10.0, 0.0, 1.0f);"
+                ],
+                "animate": [
+                    "using_item",
+                    {
+                        "hold_first_person": "context.is_first_person == 1.0"
+                    },
+                    {
+                        "hold_third_person": "context.is_first_person == 0.0"
+                    }
+                ]
+            },
+            "render_controllers": [
+                "controller.render.custom_item",
+                "controller.render.custom_item_ring"
+            ]
+        }
+    }
+}

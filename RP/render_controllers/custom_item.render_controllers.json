@@ -1,0 +1,44 @@
+{
+    "format_version": "1.8.0",
+    "render_controllers": {
+        "controller.render.custom_item": {
+            "geometry": "Geometry.default",
+            "materials": [
+                {
+                    "*": "Material.default",
+                    "shell": "Material.alpha"
+                }
+            ],
+            "textures": [
+                "Texture.default"
+            ],
+            "part_visibility": [
+                {
+                    "*": true
+                },
+                {
+                    "test": false
+                }
+            ]
+        },
+        "controller.render.custom_item_ring": {
+            "geometry": "Geometry.default",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "Texture.ring"
+            ],
+            "part_visibility": [
+                {
+                    "*": false
+                },
+                {
+                    "test": true
+                }
+            ]
+        }
+    }
+}

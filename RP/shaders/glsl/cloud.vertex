@@ -1,0 +1,46 @@
+// __multiversion__
+// This signals the loading code to prepend either #version 100 or #version 300 es as apropriate.
+
+#include "vertexVersionSimple.h"
+
+#include "uniformWorldConstants.h"
+#include "uniformPerFrameConstants.h"
+#include "uniformShaderConstants.h"
+
+attribute mediump vec4 POSITION;
+attribute vec4 COLOR;
+
+varying vec4 color;
+
+const float fogNear = 0.9;
+
+const vec3 inverseLightDirection = vec3(0.62, 0.78, 0.0);
+const float ambient = 0.7;
+
+void main()
+{
+    POS4 pos = WORLDVIEWPROJ * POSITION;
+	POS4 worldPos = WORLD * POSITION;
+ 	gl_Position = pos;
+ //구름 높이
+ gl_Position.y += POSITION.y*7.30;
+
+gl_Position.x += sin(TIME*0.2+POSITION.x +POSITION.z +POSITION.x +POSITION.z +POSITION.y)+sin(POSITION.z)*2.56;
+
+ 	color = COLOR * CURRENT_COLOR;
+
+//낮 구름 색
+vec4 day = vec4(-2.0,-2.0,-2.0,CURRENT_COLOR.a*1.5);
+color += mix(day*FOG_COLOR*0.5, FOG_COLOR, color.r)*POSITION.y;
+
+//밤 구름 색
+if(FOG_COLOR.r < 0.15 && FOG_COLOR.g < 0.15){
+vec4 night = vec4(0.43, 0.05, 0.9, 0.75);
+color += mix(night * FOG_COLOR * 0.5, FOG_COLOR, color.r * FOG_COLOR *0.5)*POSITION.y;
+}
+
+ 	float depth = length(worldPos.xyz) / RENDER_DISTANCE;
+ 	float fog = max(depth - fogNear, 0.0);
+
+ 	color.a *= 1.0 - fog;
+}

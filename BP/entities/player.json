@@ -1,0 +1,260 @@
+{
+	"format_version": "1.18.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "minecraft:player",
+			"is_spawnable": false,
+			"is_summonable": false,
+			"is_experimental": false,
+			"properties": {
+				"lim:mana": {
+					"type": "int",
+					"range": [
+						0,
+						50
+					],
+					"default": 50,
+					"client_sync": true
+				},
+				"lim:color": {
+					"type": "int",
+					"range": [
+						0,
+						11
+					],
+					"default": 1,
+					"client_sync": true
+				},
+				"lim:is_mermaid": {
+					"type": "bool",
+					"default": false,
+					"client_sync": true
+				},
+				"lim:using_staff": {
+					"type": "bool",
+					"default": false,
+					"client_sync": true
+				}
+			},
+			"scripts": {
+				"animate": [
+					"using_item"
+				],
+				"pre_animation": {}
+			},
+			"animations": {
+				"using_item": "controller.animation.using_item"
+			}
+		},
+		"component_groups": {
+			"lim:is_mermaid": {
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"effect": "conduit_power",
+							"duration": 100000,
+							"display_on_screen_animation": true,
+							"ambient": false,
+							"visible": false,
+							"amplifier": 0
+						}
+					]
+				},
+				"minecraft:variant": {
+					"value": 1
+				},
+				"minecraft:underwater_movement": {
+					"value": 0.067
+				}
+			},
+			"lim:is_not_mermaid": {
+				"minecraft:spell_effects": {
+					"remove_effects": [
+						"conduit_power"
+					]
+				},
+				"minecraft:variant": {
+					"value": 0
+				},
+				"minecraft:underwater_movement": {
+					"value": 0.055
+				}
+			}
+		},
+		"components": {
+			"minecraft:environment_sensor": {
+				"triggers": [
+					{
+						"target": "self",
+						"event": "lim:be_human",
+						"filters": {
+							"subject": "self",
+							"test": "bool_property",
+							"domain": "lim:is_mermaid",
+							"operator": "==",
+							"value": false
+						}
+					},
+					{
+						"target": "self",
+						"event": "lim:be_mermaid",
+						"filters": {
+							"subject": "self",
+							"test": "bool_property",
+							"domain": "lim:is_mermaid",
+							"operator": "==",
+							"value": true
+						}
+					}
+				]
+			},
+			"minecraft:scale": {
+				"value": 1
+			},
+			"minecraft:experience_reward": {
+				"on_death": "Math.Min(query.player_level * 7, 100)"
+			},
+			"minecraft:type_family": {
+				"family": [
+					"player"
+				]
+			},
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:loot": {
+				"table": "loot_tables/empty.json"
+			},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 1.8
+			},
+			"minecraft:can_climb": {},
+			"minecraft:movement": {
+				"value": 0.1
+			},
+			"minecraft:hurt_on_condition": {
+				"damage_conditions": [
+					{
+						"filters": {
+							"test": "in_lava",
+							"subject": "self",
+							"operator": "==",
+							"value": true
+						},
+						"cause": "lava",
+						"damage_per_tick": 4
+					}
+				]
+			},
+			"minecraft:attack": {
+				"damage": 1
+			},
+			"minecraft:player.saturation": {
+				"value": 20
+			},
+			"minecraft:player.exhaustion": {
+				"value": 0,
+				"max": 4
+			},
+			"minecraft:player.level": {
+				"value": 0,
+				"max": 24791
+			},
+			"minecraft:player.experience": {
+				"value": 0,
+				"max": 1
+			},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": -1,
+				"inhale_time": 3.75,
+				"generates_bubbles": false
+			},
+			"minecraft:nameable": {
+				"always_show": true,
+				"allow_name_tag_renaming": true
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:insomnia": {
+				"days_until_insomnia": 3
+			},
+			"minecraft:rideable": {
+				"seat_count": 2,
+				"family_types": [
+					"parrot_tame"
+				],
+				"pull_in_entities": true,
+				"seats": [
+					{
+						"position": [
+							0.4,
+							-0.2,
+							-0.1
+						],
+						"min_rider_count": 0,
+						"max_rider_count": 0,
+						"lock_rider_rotation": 0
+					},
+					{
+						"position": [
+							-0.4,
+							-0.2,
+							-0.1
+						],
+						"min_rider_count": 1,
+						"max_rider_count": 2,
+						"lock_rider_rotation": 0
+					}
+				]
+			},
+			"minecraft:water_movement": {
+				"drag_factor": 0.8
+			},
+			"minecraft:variant": {
+				"value": 0
+			},
+			"minecraft:underwater_movement": {
+				"value": 0.9
+			}
+		},
+		"events": {
+			"lim:using_item_entry": {
+				"set_property": {
+					"lim:using_staff": true
+				}
+			},
+			"lim:using_item_exit": {
+				"set_property": {
+					"lim:using_staff": false
+				}
+			},
+			"lim:be_mermaid": {
+				"add": {
+					"component_groups": [
+						"lim:is_mermaid"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"lim:is_not_mermaid"
+					]
+				}
+			},
+			"lim:be_human": {
+				"remove": {
+					"component_groups": [
+						"lim:is_mermaid"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"lim:is_not_mermaid"
+					]
+				}
+			}
+		}
+	}
+}

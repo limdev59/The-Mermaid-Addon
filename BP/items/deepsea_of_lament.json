@@ -1,0 +1,32 @@
+{
+	"format_version": "1.20.30",
+	"minecraft:item": {
+		"description": {
+			"identifier": "lim:sea_of_lament",
+			"is_experimental": true
+		},
+		"components": {
+			"minecraft:icon": "sea_of_lament",
+			"minecraft:use_animation": "spear",
+			"minecraft:display_name": {
+				"value": "item.lim:sea_of_lament.name"
+			},
+			"minecraft:max_stack_size": 1,
+			"minecraft:allow_off_hand": false,
+			"minecraft:can_destroy_in_creative": false,
+			//"category": "weapon",
+			//"duration": 1
+			//},
+			"minecraft:damage": {
+				"value": 3
+			},
+			"minecraft:use_duration": {
+				"value": 2147483647
+			},
+			"minecraft:food": {
+				"can_always_eat": true,
+				"nutrition": 100
+			}
+		}
+	}
+}

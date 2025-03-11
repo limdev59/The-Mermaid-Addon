@@ -1,0 +1,32 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.using_item": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"using_item": "query.is_using_item>0"
+						}
+					]
+				},
+				"using_item": {
+					"on_entry": [
+						"@s lim:using_item_entry" //,
+						//"/say on_entry"
+					],
+					"on_exit": [
+						"@s lim:using_item_exit" //,
+						//"/say on_exit"
+					],
+					"transitions": [
+						{
+							"default": "query.is_using_item==0"
+						}
+					]
+				}
+			}
+		}
+	}
+}
