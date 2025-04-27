@@ -164,7 +164,7 @@ function crossProduct(v1: Vector3, v2: Vector3): Vector3 {
 
 function trackMissile(projectile, shooter) {
     system.runInterval(() => {
-        if (!projectile.isValid()) return;
+        if (!projectile.isValid) return;
 
         const target = findClosestTarget(projectile, shooter);
         if (!target) return;
